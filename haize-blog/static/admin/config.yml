@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: YOUR_USERNAME/haize-blog  # Replace with your GitHub username
+  repo: nchsp/haize-blog
   branch: main
 
 media_folder: static/images
