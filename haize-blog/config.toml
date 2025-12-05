@@ -1,8 +1,8 @@
 baseURL = "https://blog.haize-realty.com/"
 languageCode = "en-us"
 title = "Haize Blog"
-theme = ""
-paginate = 5
+[pagination]
+     pagerSize = 5
 
 [params]
   # Page header - editable in CMS
