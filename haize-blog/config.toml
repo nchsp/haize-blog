@@ -1,4 +1,4 @@
-baseURL = "https://blog.haize-realty.com/"
+baseURL = "https://www.blog.haize-realty.com/"
 languageCode = "en-us"
 title = "Haize Blog"
 [pagination]
