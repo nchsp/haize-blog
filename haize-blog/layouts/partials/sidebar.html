@@ -1,0 +1,108 @@
+<!-- Sidebar -->
+<aside class="sidebar">
+    <div class="sidebar-top">
+        <!-- Greek Key Corner -->
+        <div class="greek-key-corner">
+            <svg width="220" height="220" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="fadeR" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#1a1a1a" stop-opacity="0.3"/>
+                        <stop offset="70%" stop-color="#1a1a1a" stop-opacity="0.25"/>
+                        <stop offset="100%" stop-color="#1a1a1a" stop-opacity="0.1"/>
+                    </linearGradient>
+                    <linearGradient id="fadeD" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#1a1a1a" stop-opacity="0.3"/>
+                        <stop offset="70%" stop-color="#1a1a1a" stop-opacity="0.25"/>
+                        <stop offset="100%" stop-color="#1a1a1a" stop-opacity="0.1"/>
+                    </linearGradient>
+                </defs>
+                
+                <!-- L-shaped frame - outer line -->
+                <path d="M1.5 240 V1.5 H240" stroke="url(#fadeR)" stroke-width="3" fill="none"/>
+                <!-- L-shaped frame - inner line -->
+                <path d="M22.5 220 V22.5 H220" stroke="url(#fadeR)" stroke-width="3" fill="none"/>
+                
+                <!-- Horizontal meander - 7 units -->
+                <path d="M3 22.5 V3 h18 v13.5 h-9 v-4.5 h4.5 v-4.5 h-9 v13.5 h18 V3
+                         h18 v13.5 h-9 v-4.5 h4.5 v-4.5 h-9 v13.5 h18 V3
+                         h18 v13.5 h-9 v-4.5 h4.5 v-4.5 h-9 v13.5 h18 V3
+                         h18 v13.5 h-9 v-4.5 h4.5 v-4.5 h-9 v13.5 h18 V3
+                         h18 v13.5 h-9 v-4.5 h4.5 v-4.5 h-9 v13.5 h18 V3
+                         h18 v13.5 h-9 v-4.5 h4.5 v-4.5 h-9 v13.5 h18 V3
+                         h18 v13.5 h-9 v-4.5 h4.5 v-4.5 h-9 v13.5 h18 V3"
+                      stroke="url(#fadeR)" stroke-width="3" fill="none"/>
+                
+                <!-- Vertical meander - 7 units -->
+                <path d="M22.5 3 H3 v18 h13.5 v-9 h-4.5 v4.5 h-4.5 v-9 h13.5 v18 H3
+                         v18 h13.5 v-9 h-4.5 v4.5 h-4.5 v-9 h13.5 v18 H3
+                         v18 h13.5 v-9 h-4.5 v4.5 h-4.5 v-9 h13.5 v18 H3
+                         v18 h13.5 v-9 h-4.5 v4.5 h-4.5 v-9 h13.5 v18 H3
+                         v18 h13.5 v-9 h-4.5 v4.5 h-4.5 v-9 h13.5 v18 H3
+                         v18 h13.5 v-9 h-4.5 v4.5 h-4.5 v-9 h13.5 v18 H3
+                         v18 h13.5 v-9 h-4.5 v4.5 h-4.5 v-9 h13.5 v18 H3"
+                      stroke="url(#fadeD)" stroke-width="3" fill="none"/>
+            </svg>
+        </div>
+
+        <div class="profile-wrapper">
+            {{ if .Site.Params.profilePhoto }}
+                <img class="profile-photo {{ .Site.Params.profileShape }}" src="{{ .Site.Params.profilePhoto }}" alt="{{ .Site.Params.authorName }}">
+            {{ else }}
+                <div class="profile-placeholder {{ .Site.Params.profileShape }}">H</div>
+            {{ end }}
+            <!-- Teal Greek Key on Photo -->
+            <svg class="photo-greek-key" width="70" height="70" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="fadeL" x1="100%" y1="0%" x2="0%" y2="0%">
+                        <stop offset="0%" stop-color="#2a7d7d" stop-opacity="1"/>
+                        <stop offset="70%" stop-color="#2a7d7d" stop-opacity="0.8"/>
+                        <stop offset="100%" stop-color="#2a7d7d" stop-opacity="0.4"/>
+                    </linearGradient>
+                    <linearGradient id="fadeU" x1="0%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" stop-color="#2a7d7d" stop-opacity="1"/>
+                        <stop offset="70%" stop-color="#2a7d7d" stop-opacity="0.8"/>
+                        <stop offset="100%" stop-color="#2a7d7d" stop-opacity="0.4"/>
+                    </linearGradient>
+                </defs>
+                
+                <!-- L-shaped frame -->
+                <path d="M118.5 0 V118.5 H0" stroke="url(#fadeL)" stroke-width="3" fill="none"/>
+                <path d="M97.5 0 V97.5 H0" stroke="url(#fadeL)" stroke-width="3" fill="none"/>
+                
+                <!-- Horizontal meander -->
+                <path d="M117 97.5 V117 h-18 v-13.5 h9 v4.5 h-4.5 v4.5 h9 v-13.5 h-18 V117
+                         h-18 v-13.5 h9 v4.5 h-4.5 v4.5 h9 v-13.5 h-18 V117
+                         h-18 v-13.5 h9 v4.5 h-4.5 v4.5 h9 v-13.5 h-18 V117
+                         h-18 v-13.5 h9 v4.5 h-4.5 v4.5 h9 v-13.5 h-18 V117"
+                      stroke="url(#fadeL)" stroke-width="3" fill="none"/>
+                
+                <!-- Vertical meander -->
+                <path d="M97.5 117 H117 v-18 h-13.5 v9 h4.5 v-4.5 h4.5 v9 h-13.5 v-18 H117
+                         v-18 h-13.5 v9 h4.5 v-4.5 h4.5 v9 h-13.5 v-18 H117
+                         v-18 h-13.5 v9 h4.5 v-4.5 h4.5 v9 h-13.5 v-18 H117
+                         v-18 h-13.5 v9 h4.5 v-4.5 h4.5 v9 h-13.5 v-18 H117"
+                      stroke="url(#fadeU)" stroke-width="3" fill="none"/>
+            </svg>
+        </div>
+    </div>
+
+    <div class="sidebar-bottom">
+        <a href="/" class="author-name">{{ .Site.Params.authorName }}</a>
+        <p class="author-bio">{{ .Site.Params.authorBio }}</p>
+
+        {{ if .Site.Params.showExtraText }}
+        <div class="extra-text">
+            <p>{{ .Site.Params.extraText }}</p>
+        </div>
+        {{ end }}
+
+        <div class="sidebar-footer">
+            <a href="{{ .Site.Params.siteLink }}" target="_blank" class="site-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                    <path d="M1 13 C3 13, 5 11, 6 9 C7 7, 9 5, 12 5 C16 5, 19 8, 19 12 C19 16, 16 19, 12 19 C9 19, 6.5 17, 6.5 14 C6.5 11.5, 8.5 9.5, 11 9.5 C13 9.5, 14.5 11, 14.5 12.5 C14.5 14, 13.2 15, 12 15 C11 15, 10.5 14.3, 10.5 13.5 C10.5 12.8, 11 12.3, 11.5 12.3"/>
+                </svg>
+                {{ .Site.Params.siteLinkText }}
+            </a>
+        </div>
+    </div>
+</aside>

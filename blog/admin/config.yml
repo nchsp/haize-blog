@@ -1,0 +1,89 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/blog  # Replace with your repo
+  branch: main
+  base_url: https://sveltia-cms-auth.YOUR_DOMAIN.com  # Or use Netlify Identity
+
+# Media files
+media_folder: "images"
+public_folder: "/images"
+
+# Site settings
+site_url: https://blog.haize-realty.com
+display_url: https://blog.haize-realty.com
+
+# Collections
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        required: true
+
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        required: true
+
+      - label: "Show Date on Post"
+        name: "show_date"
+        widget: "boolean"
+        default: true
+        hint: "Display the publish date on the post page"
+
+      - label: "Featured Image"
+        name: "featured_image"
+        widget: "image"
+        required: false
+        hint: "Main image displayed at the top of the post"
+
+      - label: "Excerpt"
+        name: "excerpt"
+        widget: "text"
+        required: false
+        hint: "Short description shown on the blog home page (2-3 sentences)"
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: true
+        hint: "Write your post here. You can add images anywhere in the text."
+
+  - name: "settings"
+    label: "Blog Settings"
+    files:
+      - name: "author"
+        label: "Author Info"
+        file: "settings/author.json"
+        fields:
+          - label: "Name"
+            name: "name"
+            widget: "string"
+            required: true
+
+          - label: "Photo"
+            name: "photo"
+            widget: "image"
+            required: false
+
+          - label: "Bio"
+            name: "bio"
+            widget: "text"
+            required: true
+            hint: "Short bio displayed in the sidebar (2-3 sentences)"
+
+          - label: "Blog Title"
+            name: "blog_title"
+            widget: "string"
+            default: "Journal"
+
+          - label: "Blog Subtitle"
+            name: "blog_subtitle"
+            widget: "string"
+            default: "Thoughts on property, life, and Malta"

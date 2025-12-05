@@ -1,0 +1,46 @@
+backend:
+  name: github
+  repo: YOUR_USERNAME/haize-blog  # Replace with your GitHub username
+  branch: main
+
+media_folder: static/images
+public_folder: /images
+
+collections:
+  - name: posts
+    label: Blog Posts
+    folder: content/posts
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: settings
+    label: Site Settings
+    files:
+      - name: general
+        label: General Settings
+        file: data/settings.yaml
+        fields:
+          - { label: "Page Title", name: "pageTitle", widget: "string", default: "Journal" }
+          - { label: "Page Subtitle", name: "pageSubtitle", widget: "string", default: "Thoughts on property, life, and Malta" }
+          - { label: "Featured Label", name: "featuredLabel", widget: "string", default: "Featured" }
+          - { label: "Author Name", name: "authorName", widget: "string" }
+          - { label: "Author Bio", name: "authorBio", widget: "text" }
+          - { label: "Extra Text (sidebar)", name: "extraText", widget: "text", required: false }
+          - { label: "Profile Photo", name: "profilePhoto", widget: "image", required: false }
+          - label: "Profile Shape"
+            name: "profileShape"
+            widget: "select"
+            options: ["square", "circle", "panoramic"]
+            default: "square"
+          - { label: "Show Banner", name: "showBanner", widget: "boolean", default: true }
+          - { label: "Show Newsletter", name: "showNewsletter", widget: "boolean", default: true }
+          - { label: "Show Search", name: "showSearch", widget: "boolean", default: true }
+          - { label: "Show Featured Post", name: "showFeatured", widget: "boolean", default: true }
+          - { label: "Show Extra Text", name: "showExtraText", widget: "boolean", default: true }

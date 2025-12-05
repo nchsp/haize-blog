@@ -1,0 +1,74 @@
+{{ define "main" }}
+    {{ if .Site.Params.showBanner }}
+    <div class="page-banner">
+        <div class="page-banner-image"></div>
+    </div>
+    {{ end }}
+
+    <div class="top-bar">
+        {{ if .Site.Params.showSearch }}
+        <div class="search-bar">
+            <input type="text" placeholder="Search" id="search-input">
+        </div>
+        {{ end }}
+
+        {{ if .Site.Params.showNewsletter }}
+        <div class="newsletter-inline">
+            <span class="newsletter-label">Newsletter</span>
+            <div class="newsletter-row">
+                <input type="email" placeholder="Your email">
+                <button type="submit">Subscribe</button>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+
+    <div class="content-area">
+        <header class="page-header">
+            <h1 class="page-title">{{ .Site.Params.pageTitle }}</h1>
+            <p class="page-subtitle">{{ .Site.Params.pageSubtitle }}</p>
+        </header>
+
+        {{ $posts := where .Site.RegularPages "Section" "posts" }}
+        {{ $featured := where $posts ".Params.featured" true }}
+        
+        {{ if and .Site.Params.showFeatured (gt (len $featured) 0) }}
+        {{ $featuredPost := index $featured 0 }}
+        <article class="featured-post">
+            <div class="featured-label">{{ .Site.Params.featuredLabel }}</div>
+            {{ if $featuredPost.Params.image }}
+                <img class="post-image" src="{{ $featuredPost.Params.image }}" alt="{{ $featuredPost.Title }}">
+            {{ else }}
+                <div class="post-image-placeholder"></div>
+            {{ end }}
+            <div class="post-content">
+                <div class="post-meta">{{ $featuredPost.Date.Format "January 2006" }}</div>
+                <a class="post-title" href="{{ $featuredPost.Permalink }}">{{ $featuredPost.Title }}</a>
+                <p class="post-excerpt">{{ $featuredPost.Summary }}</p>
+                <a class="read-more" href="{{ $featuredPost.Permalink }}">Continue reading →</a>
+            </div>
+        </article>
+        {{ end }}
+
+        <div class="posts-grid">
+            {{ $regularPosts := where $posts ".Params.featured" "!=" true }}
+            {{ range $regularPosts.ByDate.Reverse }}
+            <article class="post-card">
+                {{ if .Params.image }}
+                    <img class="post-image" src="{{ .Params.image }}" alt="{{ .Title }}">
+                {{ else }}
+                    <div class="post-image-placeholder"></div>
+                {{ end }}
+                <div class="post-content">
+                    <div class="post-meta">{{ .Date.Format "January 2006" }}</div>
+                    <a class="post-title" href="{{ .Permalink }}">{{ .Title }}</a>
+                    <p class="post-excerpt">{{ .Summary }}</p>
+                    <a class="read-more" href="{{ .Permalink }}">Continue reading →</a>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+
+        {{ template "_internal/pagination.html" . }}
+    </div>
+{{ end }}
